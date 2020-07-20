@@ -9,9 +9,9 @@ class App extends Component {
   state = {
     limit: 4,
     offset: 0,
-    isLoading: true,
     sushiArray: [],
-    sushiEaten: false
+    sushiEaten: false,
+    moneyTotal: 50
   }
 
   componentDidMount() {
@@ -46,7 +46,7 @@ class App extends Component {
           sushiEaten={this.state.sushiEaten}
         />
 
-        <Table />
+        <Table moneyTotal={this.state.moneyTotal}/>
       </div>
     );
   }
