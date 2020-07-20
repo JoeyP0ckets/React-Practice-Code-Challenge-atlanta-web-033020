@@ -4,16 +4,16 @@ import Sushi from '../components/Sushi'
 
 export const SushiContainer = (props) => {
   
-    
+    console.log(props)
   return (
     <Fragment>
       <div className="belt">
         {
           props.sushiArray.map(sushi => <Sushi 
-            id={sushi.id}
+            key={sushi.id}
             sushi={sushi}
             eatSushi={props.eatSushi}
-            sushiEaten={props.sushiEaten}
+            taken={props.sushiEaten.includes(sushi.id)}
           />)
         }
         <MoreButton handleMoreClick={props.handleMoreClick}/>

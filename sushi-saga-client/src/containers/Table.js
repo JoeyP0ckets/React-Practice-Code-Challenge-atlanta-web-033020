@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 
 const Table = (props) => {
-
-  const renderPlates = (array) => {
-    return array.map((x, index) => {
-      return <div className="empty-plate" style={{ top: -7 * index }}/>
+  // console.log(props)
+  const renderPlates = () => {
+    return props.sushiEaten.map((item, index) => {
+      return <div key={index} className="empty-plate" style={{ top: -7 * index }}/>
     })
   }
 
