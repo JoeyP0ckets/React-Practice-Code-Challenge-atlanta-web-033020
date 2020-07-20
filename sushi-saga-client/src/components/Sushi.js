@@ -1,20 +1,14 @@
 import React, { Fragment } from 'react'
 
 const Sushi = (props) => {
+  console.log(props)
   return (
     <div className="sushi">
-      <div className="plate" 
-           onClick={() => console.log("eating sushi")}>
-        { 
-          /* Tell me if this sushi has been eaten! */ 
-          false ?
-            null
-          :
-            <img src={props.img_url} alt='' width="100%" />
-        }
+      <div className="plate" onClick={() => props.eatSushi(props.sushi)}>
+        {props.sushiEaten === false ? <img src={props.sushi.img_url} alt='' width="100%" /> : null}
       </div>
       <h4 className="sushi-details">
-        {props.name} - ${props.price}
+        {props.sushi.name} - ${props.sushi.price}
       </h4>
     </div>
   )

@@ -11,9 +11,9 @@ export const SushiContainer = (props) => {
         {
           props.sushiArray.map(sushi => <Sushi 
             id={sushi.id}
-            name={sushi.name}
-            img_url={sushi.img_url}
-            price={sushi.price}
+            sushi={sushi}
+            eatSushi={props.eatSushi}
+            sushiEaten={props.sushiEaten}
           />)
         }
         <MoreButton handleMoreClick={props.handleMoreClick}/>
